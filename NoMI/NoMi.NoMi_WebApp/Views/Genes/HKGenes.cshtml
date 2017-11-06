@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Nomi.Nomi_WebApp.Models.HKGene>
+@{
+    ViewBag.Title = "HKGenes";
+}
+
+<h2>HKGenes</h2>
+
+@Html.ActionLink("RefreshHKGenes", "RefreshHKGenes", "Genes", null)
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gene.Symbol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gene.DisplayName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gene.EnsembleGeneId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gene.RefSeqAccession)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gene.EntrezId)
+        </th>
+    </tr>
+
+    @foreach (var gene in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => gene.Gene.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(model => gene.Gene.Symbol)
+            </td>
+            <td>
+                @Html.DisplayFor(model => gene.Gene.DisplayName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => gene.Gene.EnsembleGeneId)
+            </td>
+            <td>
+                @Html.DisplayFor(model => gene.Gene.RefSeqAccession)
+            </td>
+            <td>
+                @Html.DisplayFor(model => gene.Gene.EntrezId)
+            </td>
+        </tr>
+    }
+</table>

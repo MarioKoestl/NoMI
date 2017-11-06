@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Nomi.Nomi_WebApp.Models.Gene>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.ActionLink("Refresh Genes", "RefreshAllGenes", "Genes", null)
+@Html.ActionLink("HKGenes", "HKGenes", "Genes", null)
+
+<div style="height: 200px; overflow: auto;">
+
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Symbol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnsembleGeneId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RefSeqAccession)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EntrezId)
+            </th>
+        </tr>
+
+        @foreach (var gene in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => gene.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => gene.Symbol)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => gene.DisplayName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => gene.EnsembleGeneId)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => gene.RefSeqAccession)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => gene.EntrezId)
+                </td>
+            </tr>
+        }
+    </table>
+    <!-- Your Table Here -->
+</div>
