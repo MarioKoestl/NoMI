@@ -24,14 +24,18 @@ namespace Nomi.Nomi_WebApp.Controllers
             var config = ctx.Configurations.FirstOrDefault();
             if (config != null)
             {
+                int count = 0;
                 using (var reader = new StreamReader(config.ComprehensiveHumanExpressionMapFilePath))
                 {
                     while (!reader.EndOfStream)
                     {
                         var line = reader.ReadLine();
                         var values = line.Split('\t');
-
-
+                        count++;
+                        if (count == 1000)
+                        {
+                            break;
+                        }
                     }
                 }
             }

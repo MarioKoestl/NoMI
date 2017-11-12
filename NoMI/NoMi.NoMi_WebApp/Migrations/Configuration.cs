@@ -20,10 +20,13 @@ namespace Nomi.Nomi_WebApp.Migrations
             context.Configurations.AddOrUpdate(new Config()
             {
                 Id = 1,
-                HouseKeepingGenesFilePath = @"D:\Programming\NoMi_Correct\source\HKGene.txt",
-                HugoGeneNameFilePaths = @"D:\Programming\NoMi_Correct\source\HUGO_edit.txt",
-                ComprehensiveHumanExpressionMapFilePath = @"D:\Programming\NoMi_Correct\source\processedMatrix.Aurora.july2015.txt",
-                AffimetrixProbeIdsFilePath = @"D:\Programming\NoMi_Correct\source\GPL10355-24537.txt"
+                HouseKeepingGenesFilePath = @"D:\Programming\NoMI\NoMI\source\HKGene.txt",
+                ComprehensiveHumanExpressionMapFilePath = @"D:\Programming\NoMI\NoMI\source\processedMatrix.Aurora.july2015\processedMatrix.Aurora.july2015.txt",
+                ComprehensiveHumanExpressionMapSplitPath = @"D:\Programming\NoMI\NoMI\source\processedMatrix.Aurora.july2015\split\",
+                AffimetrixProbeIdsFilePath = @"D:\Programming\NoMI\NoMI\source\GPL10355-24537.txt",
+                GeneAnnotationsFilePath = @"D:\Programming\NoMI\NoMI\source\A-AFFY-44.adf.txt",
+                HugoGeneNameFilePath = @"D:\Programming\NoMI\NoMI\source\hgnc_complete_set\hgnc_complete_set.txt",
+                HugoGeneNameSplitPath = @"D:\Programming\NoMI\NoMI\source\hgnc_complete_set\split\"
             });
         }
     }

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoMi.NoMi_Lib", "NoMi.NoMi_Lib\NoMi.NoMi_Lib.csproj", "{844C4C89-607A-41DB-AA74-3DAE5C1EC238}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoMi.NoMi_WebApp", "Nomi.Nomi_WebApp\NoMi.NoMi_WebApp.csproj", "{D21A7C50-EA15-4886-8A23-661348085BE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoMI_UnitTest", "NoMI_UnitTest\NoMI_UnitTest.csproj", "{792C4E0F-AF13-4216-8835-8F1A5125B079}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{844C4C89-607A-41DB-AA74-3DAE5C1EC238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{844C4C89-607A-41DB-AA74-3DAE5C1EC238}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{844C4C89-607A-41DB-AA74-3DAE5C1EC238}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{844C4C89-607A-41DB-AA74-3DAE5C1EC238}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D21A7C50-EA15-4886-8A23-661348085BE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D21A7C50-EA15-4886-8A23-661348085BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D21A7C50-EA15-4886-8A23-661348085BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D21A7C50-EA15-4886-8A23-661348085BE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{792C4E0F-AF13-4216-8835-8F1A5125B079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{792C4E0F-AF13-4216-8835-8F1A5125B079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{792C4E0F-AF13-4216-8835-8F1A5125B079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{792C4E0F-AF13-4216-8835-8F1A5125B079}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,9 +9,14 @@ namespace Nomi.Nomi_WebApp.Models
         [Key]
         public int Id { get; set; }
         public string HouseKeepingGenesFilePath { get; set; }
-        public string HugoGeneNameFilePaths { get; set; }
+        public string HugoGeneNameFilePath { get; set; }
         public string ComprehensiveHumanExpressionMapFilePath { get; set; }
+        public string ComprehensiveHumanExpressionMapSplitPath { get; set; }
+
         public string AffimetrixProbeIdsFilePath { get; set; }
+        public string GeneAnnotationsFilePath { get; set; }
+        public string HugoGeneNameSplitPath { get; set; }
+
 
     }
 }

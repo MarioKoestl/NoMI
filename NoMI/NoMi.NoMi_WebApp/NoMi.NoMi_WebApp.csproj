@@ -169,7 +169,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="HangfireJobs\GetHKGenesJob.cs" />
+    <Compile Include="HangfireJobs\RefreshAllGenesJob.cs" />
+    <Compile Include="Manager\AllGeneFileManager.cs" />
+    <Compile Include="Manager\AllHKGeneFileManager.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Config.cs" />
     <Compile Include="Models\Gene.cs" />
@@ -184,6 +186,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Compile Include="Manager\FileManager.cs" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -236,12 +239,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NoMi.NoMi_Lib\NoMi.NoMi_Lib.csproj">
-      <Project>{844C4C89-607A-41DB-AA74-3DAE5C1EC238}</Project>
-      <Name>NoMi.NoMi_Lib</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

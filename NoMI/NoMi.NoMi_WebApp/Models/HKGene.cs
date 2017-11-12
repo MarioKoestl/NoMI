@@ -15,6 +15,7 @@ namespace Nomi.Nomi_WebApp.Models
         [ForeignKey("GeneId")]
         [Required]
         public Gene Gene { get; set; }
+        [Required]
         public int GeneId { get; set; }
 
     }
