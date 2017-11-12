@@ -5,21 +5,18 @@
 
 <h2>HKGenes</h2>
 
-@Html.ActionLink("RefreshHKGenes", "RefreshHKGenes", "Genes", null)
+@Html.ActionLink("RefreshHKGenes", "RefreshAllHKGenes", "Genes", null)
 
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Id)
+            @Html.DisplayNameFor(model => model.Gene.EnsembleGeneId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Gene.Symbol)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Gene.DisplayName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Gene.EnsembleGeneId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Gene.RefSeqAccession)
@@ -33,16 +30,13 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(model => gene.Gene.Id)
+                @Html.DisplayFor(model => gene.Gene.EnsembleGeneId)
             </td>
             <td>
                 @Html.DisplayFor(model => gene.Gene.Symbol)
             </td>
             <td>
                 @Html.DisplayFor(model => gene.Gene.DisplayName)
-            </td>
-            <td>
-                @Html.DisplayFor(model => gene.Gene.EnsembleGeneId)
             </td>
             <td>
                 @Html.DisplayFor(model => gene.Gene.RefSeqAccession)

@@ -170,8 +170,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HangfireJobs\RefreshAllGenesJob.cs" />
-    <Compile Include="Manager\AllGeneFileManager.cs" />
-    <Compile Include="Manager\AllHKGeneFileManager.cs" />
+    <Compile Include="HangfireJobs\RefreshAllHkGenesJob.cs" />
+    <Compile Include="Manager\GeneFileManager.cs" />
+    <Compile Include="Manager\HKGeneFileManager.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Config.cs" />
     <Compile Include="Models\Gene.cs" />

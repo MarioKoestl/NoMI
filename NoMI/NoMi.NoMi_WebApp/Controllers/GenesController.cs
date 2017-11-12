@@ -3,7 +3,7 @@ using System.Linq;
 using System.Web.Mvc;
 using Nomi.Nomi_WebApp.Models;
 using Nomi.Nomi_WebApp.HangfireJobs;
-
+using System.Data.Entity;
 // ReSharper disable InconsistentNaming
 
 namespace Nomi.Nomi_WebApp.Controllers
@@ -18,32 +18,25 @@ namespace Nomi.Nomi_WebApp.Controllers
             Config = DBContext.Configurations.FirstOrDefault();
         }
 
-        // GET: HKGenes
         public ActionResult Index()
         {
             return View(DBContext.Genes);
         }
+        public ActionResult HKGenes()
+        {
+            return View(DBContext.HKGenes
+                .Include(g=>g.Gene));
+        }
 
-
-        //[DisplayName("Get All HKGenes")]
-        //public void FillDbWithHKGenes()
-        //{
-        //    DBContext.Database.ExecuteSqlCommand("delete from HKGenes");
-        //    var config = DBContext.Configurations.FirstOrDefault();
-        //    using (var reader = new StreamReader(config.HouseKeepingGenesFilePath))
-        //    {
-        //        while (!reader.EndOfStream)
-        //        {
-        //            var symbol = reader.ReadLine();
-        //            var hkgene = new HKGene()
-        //            {
-        //                Gene = DBContext.Genes.First(g => g.Symbol.ToLower().Equals(symbol.ToLower()))
-        //            };
-        //            DBContext.HKGenes.Add(hkgene);
-        //        }
-        //    }
-        //    DBContext.SaveChanges();
-        //}
+        [ActionName("RefreshAllHkGenes")]
+        public ActionResult RefreshAllHkGenes()
+        {
+            using (var refreshJob = new RefreshAllHkGenesJob())
+            {
+                refreshJob.Create(Config.HouseKeepingGenesFilePath);
+            }
+            return RedirectToAction("HKGenes", "Genes", DBContext.Genes);
+        }
 
         [ActionName("RefreshAllGenes")]
         public ActionResult RefreshAllGenes()

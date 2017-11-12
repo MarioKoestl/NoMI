@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nomi.Nomi_WebApp.Manager;
 using Nomi.Nomi_WebApp.Models;
@@ -20,25 +21,24 @@ namespace NoMI_UnitTest
         }
 
         [TestMethod]
-        public void ReadAndWriteAllGenesToDataBase_ValidGenes_InDatabase()
+        public async Task ReadAndWriteAllGenesToDataBase_ValidGenes_InDatabase()
         {
-           
             //Arrange
-            var manager = new AllGeneFileManager();
-            var filePath = Config.HugoGeneNameFilePath;
+            var manager = new GeneFileManager();
+            var filePath = @"D:\Programming\NoMI\NoMI\source\hgnc_complete_set\split\hgnc_complete_set_0.txt";
             //Act
-            manager.ReadAndWriteAllGenesToDataBase(filePath);
+            await manager.ReadAndWriteAllGenesToDataBase(filePath);
             //Assert
             Assert.IsTrue(DBContext.Genes.Any());
         }
         [TestMethod]
-        public void ReadAndWriteAllHKGenesToDataBase_ValidGenes_InDatabase()
+        public async Task ReadAndWriteAllHKGenesToDataBase_ValidGenes_InDatabase()
         {
             //Arrange
-            var manager = new AllHKGeneFileManager();
+            var manager = new HKGeneFileManager();
             var filePath = Config.HouseKeepingGenesFilePath;
             //Act
-            manager.ReadAndWriteAllHKGenesToDataBase(filePath);
+            await manager.ReadAndWriteAllHKGenesToDataBase(filePath);
             //Assert
             Assert.IsTrue(DBContext.HKGenes.Any());
         }

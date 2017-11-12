@@ -9,14 +9,12 @@ namespace Nomi.Nomi_WebApp.Models
 {
     public class HKGene
     {
-        [Key]
-        public int Id { get; set; }
-
-        [ForeignKey("GeneId")]
+        [ForeignKey("EnsembleGeneId")]
         [Required]
         public Gene Gene { get; set; }
+        [Key]
         [Required]
-        public int GeneId { get; set; }
+        public string EnsembleGeneId { get; set; }
 
     }
 }

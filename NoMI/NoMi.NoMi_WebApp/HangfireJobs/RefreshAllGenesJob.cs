@@ -10,14 +10,14 @@ using hf = Hangfire;
 
 namespace Nomi.Nomi_WebApp.HangfireJobs
 {
-    public class RefreshAllGenesJob :IDisposable
+    public class RefreshAllGenesJob : IDisposable
     {
-        public AllGeneFileManager FileManager { get; set; }
+        public GeneFileManager FileManager { get; set; }
 
         [DisplayName("GetGenesFromFile: {0}")]
         public async Task GetGenesFromFile(string filePath)
         {
-            FileManager = new AllGeneFileManager();
+            FileManager = new GeneFileManager();
             await FileManager.ReadAndWriteAllGenesToDataBase(filePath);
         }
 

@@ -6,12 +6,17 @@ namespace Nomi.Nomi_WebApp.Models
     public class Gene
     {
         [Key]
-        public int Id { get; set; }
+        [Index]
+        [Required]
+        [MaxLength(255)]
         public string EnsembleGeneId { get; set; }
         [Index]
         [Required]
         [MaxLength(255)]
         public string DisplayName { get; set; }
+        [Index]
+        [Required]
+        [MaxLength(255)]
         public string Symbol { get; set; }
         public string EntrezId { get; set; }
         public string Location { get; set; }
